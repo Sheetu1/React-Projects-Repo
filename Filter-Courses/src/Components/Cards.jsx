@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 
 const Cards = ({ courses }) => {
-  if (!courses) return <div>No courses found</div>;
+  if (!courses) return <div>No Courses Found</div>;
 
   const getCourses = () => {
     let allcourses = [];
