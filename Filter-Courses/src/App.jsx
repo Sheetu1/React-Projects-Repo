@@ -28,7 +28,7 @@ function App(){
   return(
     <div>
       <Navbar/>
-      <FilterCourses filterdata={filterData}  />
+      <FilterCourses filterData={filterData}  />
       <Cards courses={courses}/>
     
 

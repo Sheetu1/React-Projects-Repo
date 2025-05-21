@@ -1,9 +1,10 @@
 import React from 'react'
 
-const FilterCourses = ({filterdata}) => {
+const FilterCourses = (props) => {
+  let filterData = props.filterData;
   return (
     <div>
-      {filterdata.map( (data) => ( 
+      {filterData.map( (data) => ( 
         <button key={data.id}>
           {data.title}
         </button>
