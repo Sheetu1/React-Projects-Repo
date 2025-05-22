@@ -4,7 +4,7 @@ import Card from './Card';
 const Cards = ({ courses, category }) => {
   const [likedCourses, setLikedCourses] = useState([]);
 
-  if (!courses) return <div className="text-center text-gray-600 mt-10">No Courses Found</div>;
+  if (!courses) return <div className="text-center text-gray-500 mt-8">No Courses Found</div>;
 
   const getCourses = () => {
     if (category === "All") {
