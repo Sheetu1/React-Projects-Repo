@@ -26,7 +26,7 @@ function App(){
   },[]);
 
   return(
-    <div>
+    <div className="">
       <Navbar/>
       <FilterCourses filterData={filterData}  />
       <Cards courses={courses}/>

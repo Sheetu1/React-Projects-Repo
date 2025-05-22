@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 
 const Cards = ({ courses }) => {
+  
+  const [likedCourses,setLikedCoures] = useState([])
+
   if (!courses) return <div>No Courses Found</div>;
 
   const getCourses = () => {
@@ -15,9 +18,9 @@ const Cards = ({ courses }) => {
   };
 
   return (
-    <div>
+    <div className='w-full h-screen flex  flex-wrap gap-5'>
       {getCourses().map((course, index) => (
-        <Card key={course.id || index} course={course} />
+        <Card key={course.id || index} course={course} likecourses={likedCourses} setlikecourses={setLikedCoures} />
       ))}
     </div>
   );
