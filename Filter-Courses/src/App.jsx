@@ -1,38 +1,33 @@
-
 import React, { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import FilterCourses from "./Components/FilterCourses";
-import {apiUrl,filterData} from "./data"
-import { toast } from "react-toastify"
+import { apiUrl, filterData } from "./data";
+import { toast } from "react-toastify";
 import Cards from "./Components/Cards";
-function App(){
-  const [courses,setcourses] = useState(null)
 
-  console.log(courses);
-  
+function App() {
+  const [courses, setCourses] = useState(null);
+  const [category, setCategory] = useState(filterData[0].title);
 
   useEffect(() => {
-    const fetchData = async() => {
-      try{
+    const fetchData = async () => {
+      try {
         const res = await fetch(apiUrl);
         const output = await res.json();
-        setcourses(output.data);
-      }
-      catch(err){
+        setCourses(output.data);
+      } catch (err) {
         toast.error("Something went wrong");
       }
-    }
+    };
     fetchData();
-  },[]);
+  }, []);
 
-  return(
-    <div className="">
-      <Navbar/>
-      <FilterCourses filterData={filterData}  />
-      <Cards courses={courses}/>
-    
-
+  return (
+    <div className="min-h-screen bg-gray-100">
+      <Navbar />
+      <FilterCourses filterData={filterData} category={category} setcategory={setCategory} />
+      <Cards courses={courses} category={category} />
     </div>
-  )
+  );
 }
 export default App;

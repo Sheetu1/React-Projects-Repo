@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import Card from './Card';
 
-const Cards = ({ courses }) => {
-  
-  const [likedCourses,setLikedCoures] = useState([])
+const Cards = ({ courses, category }) => {
+  const [likedCourses, setLikedCourses] = useState([]);
 
-  if (!courses) return <div>No Courses Found</div>;
+  if (!courses) return <div className="text-center text-gray-600 mt-10">No Courses Found</div>;
 
   const getCourses = () => {
-    let allcourses = [];
-    Object.values(courses || {}).forEach((array) => {
-      array.forEach((courseData) => {
-        allcourses.push(courseData);
+    if (category === "All") {
+      let allCourses = [];
+      Object.values(courses).forEach((array) => {
+        array.forEach((courseData) => {
+          allCourses.push(courseData);
+        });
       });
-    });
-    return allcourses;
+      return allCourses;
+    } else {
+      return courses[category] || [];
+    }
   };
 
   return (
-    <div className='w-full h-screen flex  flex-wrap gap-5'>
+    <div className='flex flex-wrap justify-center gap-6 px-5 pb-10'>
       {getCourses().map((course, index) => (
-        <Card key={course.id || index} course={course} likecourses={likedCourses} setlikecourses={setLikedCoures} />
+        <Card
+          key={course.id || index}
+          course={course}
+          likedcourses={likedCourses}
+          setlikedcourses={setLikedCourses}
+        />
       ))}
     </div>
   );
