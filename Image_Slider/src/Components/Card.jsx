@@ -3,7 +3,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Card = ({ reviews }) => {
   if (!reviews) {
-    return <div>No review data found.</div>;
+    return <div>No review data found..</div>
   }
 
   return (
@@ -15,6 +15,8 @@ const Card = ({ reviews }) => {
         <p>{reviews.name}</p>
       </div>
       <div>
+
+
         <p>{reviews.title}</p>
       </div>
       <div>
