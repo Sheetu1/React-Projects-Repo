@@ -7,8 +7,8 @@ const Card = ({ reviews }) => {
   }
 
   return (
-    <div>
-      <div>
+    <div className='w-full'>
+      <div className=''>
         <img src={reviews.image} alt={reviews.name} />
       </div>
       <div>
