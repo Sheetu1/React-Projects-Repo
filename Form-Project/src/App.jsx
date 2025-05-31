@@ -4,9 +4,9 @@ const App = () => {
   const [formData, setformData] = useState({
     firstname: "",
     lastname: "",
-    address: "",
+    EmailAddress: "",
     city: "",
-    state: "",
+    street: "",
     zipcode: "",
     country: "India",
   });
@@ -64,7 +64,7 @@ const App = () => {
           value={formData.city}
         />
         <br /> <br />
-        <label htmlFor="firstname">Strete</label>
+        <label htmlFor="firstname">Street</label>
         <br />
         <input
           className="outline w-[500px] h-5"
