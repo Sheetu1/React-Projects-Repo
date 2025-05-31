@@ -21,6 +21,7 @@ const App = () => {
     comments: "",
     isVisible: true,
     mode: "",
+    favCar:""
   });
   console.log(formData);
 
@@ -37,10 +38,14 @@ const App = () => {
       };
     });
   }
+  function submitHandler (e) {
+    e.preventDefault()
+    console.log(formData);
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={submitHandler}>
         {/* <input onChange={NameHandler} type="text"  placeholder="Enter Name"/>
         <input onChange={EmailHandler} type="email" placeholder="Enter Email" /> */}
         <br />
@@ -99,6 +104,16 @@ const App = () => {
           checked={formData.mode === "offlinemode"}        
           />
         <label htmlFor="mode">Offline mode</label>
+        <br />
+        <br />
+        <select onChange={ChangeHandler} name="favCar" id="favCar" value={formData.favCar}>
+          <option value="Thar">Thar</option>
+          <option value="Scorpio">Scorpio</option>
+          <option value="BMW">BMW</option>
+          <option value="Mercdi">Mercdi</option>
+          <option value="ODI">ODI</option>
+        </select>
+        <button>submit</button>
       </form>
     </div>
   );
