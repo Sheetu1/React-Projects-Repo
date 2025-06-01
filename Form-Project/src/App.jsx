@@ -41,7 +41,7 @@ const App = () => {
           id="lastname"
           name="lastname"
           value={formData.lastname}
-        />
+      />
         <br /> <br />
         <label htmlFor="firstname">Email Address</label>
         <br />
