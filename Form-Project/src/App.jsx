@@ -17,7 +17,7 @@ const App = () => {
     e.preventDefault();
   }
   return (
-    <div className="w-full h-screen bg-gray-400 flex justify-center pt-2">
+    <div className="w-full h-screen bg-gray-500 flex justify-center pt-2">
       <form onSubmit={submitHandler}>
         <label htmlFor="firstname">First Name</label>
         <br />
@@ -34,10 +34,10 @@ const App = () => {
         <label htmlFor="firstname">Last Name</label>
         <br />
         <input
-          className="outline w-[500px] h-5"
+          className="outline w-[450px] h-5"
           onChange={changeHandler}
           type="text"
-          placeholder="Sharma"
+          placeholder="Pathak"
           id="lastname"
           name="lastname"
           value={formData.lastname}
