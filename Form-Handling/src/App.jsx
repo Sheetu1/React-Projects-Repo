@@ -61,7 +61,7 @@ const App = () => {
         <input
           onChange={ChangeHandler}
           type="email"
-          placeholder="Enter Email"
+          placeholder="Enter email"
           name="email"
           value={formData.email}
         />
@@ -70,7 +70,7 @@ const App = () => {
         <textarea
           onChange={ChangeHandler}
           name="comments"
-          placeholder="Enter Comments"
+          placeholder="Enter comments"
         ></textarea>
         <br />
         <br />
@@ -111,7 +111,7 @@ const App = () => {
           <option value="Scorpio">Scorpio</option>
           <option value="BMW">BMW</option>
           <option value="Mercdi">Mercdi</option>
-          <option value="ODI">ODI</option>
+          <option value="ODI">Odii</option>
         </select>
         <button>submit</button>
       </form>
