@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [Todo, setTodo] = useState('');
+  const [Todo, setTodo] = useState("");
   const [Todos, setTodos] = useState([]);
 
   function submitHandler(e) {
@@ -9,6 +9,11 @@ const App = () => {
     console.log(Todo);
     setTodos([...Todos, Todo]);
     setTodo("");
+  }
+  const deleteHandler = (idx) => {
+    const copyTask = [...Todos]
+    copyTask.splice(idx,1)
+    setTodos(copyTask)
   }
 
   return (
@@ -23,17 +28,15 @@ const App = () => {
         <button type="submit">Add Task</button>
       </form>
 
-      {/* ✅ Correct conditional rendering */}
-      {
-        Todos.length > 0 ? (
-          Todos.map((item, idx) => (
-            <div key={idx}>
-              <h1>{item}</h1>
-            </div>
-
+      {/* ✅ Todo list with delete button (no logic yet) */}
+      {Todos.length > 0
+        ? Todos.map((item, idx) => (
+              <div key={idx} className="flex  gap-10">
+                <h1>{item}</h1>
+                <button onClick={() => {deleteHandler(idx)} } >Delete</button>
+              </div>
           ))
-        ) : null
-      }
+        : null}
     </div>
   );
 };
